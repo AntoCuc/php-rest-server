@@ -4,8 +4,6 @@ The aim of this project is the creation of a zero configuration, media-type inde
 
 I could not find a framework that would allow me to quickly jump-start a server ready to accept resource requests without what I believe is excessive configuration and in some cases programming.
 
-Keep in mind that this scripts library is not meant to be used on a public server.
-
 ## Dependencies
 
 The Php Rest Server only requires:
@@ -30,14 +28,18 @@ Once installed testing the scripts are working as designed should be very simple
 
 ## Features
 
-PUT <host>/abc/123 -> Creates a new resource
+PUT _host_/abc/123 -> Creates a new resource
 
-GET <host>/abc/123 -> Retrieves the resource
+PUT _host_/abc/ -> Creates a new collection
 
-POST <host>/abc/123 -> Updates the contents of the resource
+GET _host_/abc/123 -> Retrieves the resource
 
-DELETE <>host/abc/123 -> Deletes the resource
+POST _host_/abc/123 -> Updates the contents of the resource
+
+DELETE _host_/abc/123 -> Deletes the resource
 
 ## Limitations
 
-Collection storage and retrieval are currently not supported.
+1. Unsupported collection retrieval
+2. Unverified URI length
+3. Unlimited payload size
