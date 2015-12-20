@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_METHOD} (GET)
+    RewriteRule .* get.php
+    RewriteCond %{REQUEST_METHOD} (PUT)
+    RewriteRule .* put.php
+    RewriteCond %{REQUEST_METHOD} (POST)
+    RewriteRule .* post.php
+    RewriteCond %{REQUEST_METHOD} (DELETE)
+    RewriteRule .* delete.php
+</IfModule>
