@@ -5,51 +5,108 @@
      *
      */
     require_once 'common.php';
-    
+
     /**
      *
      * The request data
      *
      */
     $put_data = fopen("php://input", "r");
-    
-    /**
-     *
-     * Does the resource container directory exist
-     *
-     */
-    if(!is_dir(dirname(RESOURCE_PATH)))
-    {
-        /**
-         *
-         * If not create it
-         *
-         */
-        mkdir(dirname(RESOURCE_PATH).'/', 0777, TRUE);
-    }
 
     /**
      *
-     * Attempt to create the file
-     * Locking the resource during write
+     * The length of the resource identifier
      *
      */
-    if(@file_put_contents(RESOURCE_PATH, $put_data, LOCK_EX))
+    $uri_length = strlen(RESOURCE_PATH);
+
+    /**
+     *
+     * The last character of the resource identifier
+     *
+     */
+    $uri_last_char = substr(RESOURCE_PATH, $uri_length - 1);
+
+    /**
+     *
+     * Is the request for a collection
+     *
+     */
+    if($uri_last_char === '/')
     {
         /**
+         * The request is for a collection
          *
-         * Success: Respond with Created (201)
+         * Attempt to create the collection
+         * 
+         * Allow public visibility
+         * Recursively (support nested collections)
          *
          */
-        http_response_code(201);
+        if(@mkdir(RESOURCE_PATH, 0777, TRUE))
+        {
+            /**
+             *
+             * Success: Respond with Created (201)
+             *
+             */
+            http_response_code(201);
+        }
+        else
+        {
+            /**
+             *
+             * Failure: Not Allowed (405)
+             *
+             */
+            http_response_code(405);
+        }
     }
     else
     {
         /**
+         * 
+         * The request is for a resource
          *
-         * Failure: Not Allowed (405)
+         * Does the resource container directory exist
          *
          */
-        http_response_code(405);
+        if(!is_dir(dirname(RESOURCE_PATH)))
+        {
+            /**
+             *
+             * If not, attempt to create it
+             * 
+	         * Allow public visibility
+	         * Recursively (support nested collections)
+             *
+             */
+            @mkdir(dirname(RESOURCE_PATH).'/', 0777, TRUE);
+        }
+
+        /**
+         *
+         * Attempt to create the file
+         * Locking the resource during write
+         *
+         */
+        if(@file_put_contents(RESOURCE_PATH, $put_data, LOCK_EX))
+        {
+            /**
+             *
+             * Success: Respond with Created (201)
+             *
+             */
+            http_response_code(201);
+        }
+        else
+        {
+            /**
+             *
+             * Failure: Not Allowed (405)
+             *
+             */
+            http_response_code(405);
+        }
     }
 ?>
