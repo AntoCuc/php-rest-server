@@ -10,8 +10,19 @@
      * 
      * The resource name
      * 
+     * var string
+     * 
      */
     $resource_name = basename(RESOURCE_PATH);
+    
+    /**
+     * 
+     * The resource length
+     * 
+     * var integer
+     * 
+     */
+    $resource_name_length = strlen($resource_name);
 
     /**
      *
@@ -20,7 +31,7 @@
      * character length. 
      * 
      */
-    if(strlen($resource_name) > MAX_RESOURCE_NAME_LENGTH)
+    if($resource_name_length > MAX_RESOURCE_NAME_LENGTH)
     {
     	/**
     	 * 
@@ -29,5 +40,30 @@
     	 * 
     	 */
         http_response_code(400);
+        exit;
+    }
+    
+    /**
+     * 
+     * The URI length
+     * 
+     * var integer
+     * 
+     */
+    $uri_length = strlen(RESOURCE_PATH);
+    
+    /**
+     * 
+     * Checks whether the URI length is longer the the configured limit.
+     * 
+     */
+    if($uri_length > MAX_URI_LENGTH)
+    {
+    	/**
+    	 * 
+    	 * URI too long (414)
+    	 * 
+    	 */
+    	http_response_code(414);
         exit;
     }

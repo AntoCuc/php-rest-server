@@ -59,4 +59,21 @@
      * 
      */
     define('MAX_RESOURCE_NAME_LENGTH', 255);
+
+    /**
+     ********************************************************************
+     * MAX URI LENGTH
+     ********************************************************************
+     *
+     * The Unified Resources Identifier (URI) max length in characters.
+     * 
+     * This value is wildly variable depending on the capabilities of the
+     * technology meant to operate as a client of REST server
+     * implementations.
+     * 
+     * The default value of 1024 is based on the maximum URI length
+     * supported by Microsoft Internet Explorer 6.
+     * 
+     */
+    define('MAX_URI_LENGTH', 1024);
 ?>
