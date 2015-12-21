@@ -6,7 +6,7 @@ I could not find a framework that would allow me to quickly jump-start a server 
 
 ## Dependencies
 
-The Php Rest Server only requires:
+The Php Rest Server requires only:
 
 * Apache with mod_rewrite.so enabled
 * A recent PHP version
@@ -16,7 +16,8 @@ The Php Rest Server only requires:
 Copy to your server the files:
 
 * .htaccess
-* common.php
+* config.inc.php
+* common.inc.php
 * put.php
 * get.php
 * post.php

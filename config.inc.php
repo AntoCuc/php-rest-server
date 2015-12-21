@@ -36,4 +36,27 @@
      *
      */
     define('RESOURCE_PATH', RESOURCES_DIR . $_SERVER['REQUEST_URI']);
+    
+    /**
+     *********************************************************************
+     * MAX RESOURCE NAME LENGTH
+     *********************************************************************
+     *
+     * The resource name max length in characters. 
+     * 
+     * This value should be in-line with the file-system hosting
+     * the resources.
+     * 
+     * FAT12: 255 bytes (UTF-16)
+     * FAT16: 255 bytes (UTF-16)
+     * FAT32: 255 bytes (UTF-16)
+     * NTFS : 255 characters
+     * EXT2 : 255 bytes
+     * EXT3 : 255 bytes
+     * EXT4 : 255 bytes
+     * XFS  : 255 bytes
+     * JFS  : 255 bytes
+     * 
+     */
+    define('MAX_RESOURCE_NAME_LENGTH', 255);
 ?>
