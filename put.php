@@ -1,7 +1,8 @@
 <?php
     /**
      *
-     * Require shared resources
+     * The server configuration
+     * The server common behavior
      *
      */
     require_once 'common.inc.php';
@@ -10,12 +11,16 @@
      *
      * The request data
      *
+     * var resource
+     * 
      */
     $put_data = fopen("php://input", "r");
 
     /**
      *
      * The length of the resource identifier
+     * 
+     * var integer
      *
      */
     $uri_length = strlen(RESOURCE_PATH);
@@ -23,6 +28,8 @@
     /**
      *
      * The last character of the resource identifier
+     * 
+     * var char
      *
      */
     $uri_last_char = substr(RESOURCE_PATH, $uri_length - 1);

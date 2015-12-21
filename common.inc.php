@@ -1,7 +1,7 @@
 <?php
     /**
      *
-     * Require shared resources
+     * The server configuration
      *
      */
     require_once 'config.inc.php';

@@ -1,7 +1,8 @@
 <?php
     /**
      *
-     * Require shared resources
+     * The server configuration
+     * The server common behavior
      *
      */
     require_once 'common.inc.php';
@@ -10,6 +11,8 @@
      *
      * The request data
      *
+     * var resource
+     * 
      */
     $post_data = fopen("php://input", "r");
 

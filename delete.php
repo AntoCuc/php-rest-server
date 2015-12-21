@@ -1,7 +1,8 @@
 <?php
     /**
      *
-     * Require shared resources
+     * The server configuration
+     * The server common behavior
      *
      */
     require_once 'common.inc.php';
