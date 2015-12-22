@@ -1,10 +1,61 @@
 <?php
     /**
      *********************************************************************
+     * PHP REST Server
+     *********************************************************************
+     * 
+     * An Open Source REST server for PHP
+     * 
+     * This content is released under the MIT License (MIT)
+     *
+     * Copyright (c) 2015, Antonino Cucchiara
+     * 
+     * Permission is hereby granted, free of charge, to any person 
+     * obtaining a copy of this software and associated documentation 
+     * files (the "Software"), to deal in the Software without restriction,
+     * including without limitation the rights to use, copy, modify, merge,
+     * publish, distribute, sublicense, and/or sell copies of the Software,
+     * and to permit persons to whom the Software is furnished to do so, 
+     * subject to the following conditions:
+     * 
+     * The above copyright notice and this permission notice shall be 
+     * included in all copies or substantial portions of the Software.
+     * 
+     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+     * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+     * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+     * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+     * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
+     * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+     * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+     * THE SOFTWARE.
+     * 
+     * @package PHP REST Server
+     * @author Antonino Cucchiara
+     * @copyright Copyright (c) 2015, Antonino Cucchiara
+     * @license http://opensource.org/licenses/MIT	MIT License
+     * @filesource
+     */
+
+    /**
+     *********************************************************************
+     * CONFIGURATION
+     *********************************************************************
+     * 
+     * This in the main PHP REST server configuration file.
+     * 
+     * It contains configuration constants to give the server its
+     * instructions.
+     * 
+     */
+
+    /**
+     *********************************************************************
      * RESOURCE DIRECTORY
      *********************************************************************
      *
      * The directory designated to the resources storage.
+     * 
      * The path can be any directory name as supported by the operating
      * system (OS) used to run this script.
      * 
@@ -29,10 +80,10 @@
      *
      * The URI will be in fragment form.
      * Example:
-     *     /mycollection/123
+     *     /mycollection/resource123
      *
      * The URI is appended to the designated resources directory so to
-     * allow the safe storage of resources.
+     * allow the safe storage of resources in the file-system.
      *
      */
     define('RESOURCE_PATH', RESOURCES_DIR . $_SERVER['REQUEST_URI']);
@@ -44,7 +95,7 @@
      *
      * The resource name max length in characters. 
      * 
-     * This value should be in-line with the file-system hosting
+     * This value should be compatible with the file-system hosting
      * the resources.
      * 
      * FAT12: 255 bytes (UTF-16)
