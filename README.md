@@ -19,7 +19,7 @@ PHP REST allows you to focus on your project rather than building the n<sup>th</
 The Php Rest Server requires:
 
 * Apache with mod_rewrite enabled
-* PHP 5 or greater
+* PHP 5.4 or newer
 
 ## Installation
 
