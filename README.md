@@ -1,13 +1,17 @@
-# Php Rest Server
+# PHP REST Server
 
-A Zero Configuration, [PHP](http://php.net/ "Hypertext Pre-processor") REST server implementation supporting _any media-type_.
+An Open Source REST Server implementation in PHP
+
+The aim of this project is the creation of a Zero Configuration, database-less, [PHP](http://php.net/ "Hypertext Pre-processor") REST server implementation for people that want to jump-start their REST based project.
+
+PHP REST allows you to focus on your project rather than building the n<sup>th</sup> REST implementation.
 
 ## Available operations
 
     PUT <host>/abc/123    -> Create a new resource
     PUT <host>/abc/       -> Create a new collection
     GET <host>/abc/123    -> Retrieve a resource
-    POST <host>/abc/123   -> Update the contents of a resource
+    POST <host>/abc/123   -> Update a resource
     DELETE <host>/abc/123 -> Delete a resource
 
 ## Dependencies
@@ -29,22 +33,22 @@ Copy the following files to the server:
 * post.php - post requests
 * delete.php - delete requests
 
-No restart required. :)
+No restart required.
 
 ## Testing
 
 Verifying the server scripts are working as designed can be achieved with a client such as CUrl.
 
-### PUT
+### Creating
 Send a PUT request with some arbitrary content. 
 
-### GET
+### Retrieving
 GET it back.
 
-### POST
+### Updating
 POST an update, verify it by GETting again.
 
-### DELETE
+### Deleting
 
 Finally, just for giggles, DELETE it.
 
