@@ -40,17 +40,27 @@ No restart required.
 Verifying the server scripts are working as designed can be achieved with a client such as CUrl.
 
 ### Creating
-Send a PUT request with some arbitrary content. 
+
+Send a PUT request with some arbitrary content.
+
+    curl -T "<filename>" http://<your-site>/<resource-name>
 
 ### Retrieving
+
 GET it back.
+
+    curl http://<your-site>/<resource-name>
 
 ### Updating
 POST an update, verify it by GETting again.
 
+    curl --data "<name>=%20<value>%20" http://<your-site>/<resource-name>
+
 ### Deleting
 
 Finally, just for giggles, DELETE it.
+
+    curl -X "DELETE" http://<your-site>/<resource-name>
 
 ## Limitations
 
