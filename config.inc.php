@@ -91,6 +91,23 @@
 
     /**
      *********************************************************************
+     * REQUEST CONTENT TYPE
+     *********************************************************************
+     *
+     * The request content mime-type for the resource.
+     *
+     * Example:
+     *     application/json
+     *     text/html
+     *     text/plain
+     *
+     * Note: This server directive is only initialised on POST requests.
+     *
+     */
+    define('RESOURCE_TYPE', $_SERVER['CONTENT_TYPE']);
+
+    /**
+     *********************************************************************
      * REQUEST ACCEPTABLE RESPONSE
      *********************************************************************
      *
