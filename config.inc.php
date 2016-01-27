@@ -79,14 +79,30 @@
      * The resource requested as a Uniform Resource Identifier (URI).
      *
      * The URI will be in fragment form.
+     *
      * Example:
-     *     /mycollection/resource123
+     *     <resource-dir>/mycollection/resource123
      *
      * The URI is appended to the designated resources directory so to
      * allow the safe storage of resources in the file-system.
      *
      */
     define('RESOURCE_PATH', RESOURCES_DIR . $_SERVER['REQUEST_URI']);
+
+    /**
+     *********************************************************************
+     * REQUEST ACCEPTABLE RESPONSE
+     *********************************************************************
+     *
+     * The raw request acceptable response mime-type for the resource.
+     *
+     * Example:
+     *     application/json
+     *     text/html, application/xml;q=0.9, */*;q=0.8
+     *     text/html; q=1.0, text/*; q=0.8, */*; q=0.1
+     *
+     */
+    define('RESOURCE_ACCEPT', $_SERVER['HTTP_ACCEPT']);
     
     /**
      *********************************************************************
