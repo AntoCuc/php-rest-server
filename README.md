@@ -58,11 +58,13 @@ POST an update, verify it by GETting again.
 
 ### Deleting
 
-Finally, just for giggles, DELETE it.
+Finally, just for giggles, DELETE it (Heads up: it can't be undone).
 
     curl -X "DELETE" http://<your-site>/<resource-name>
 
 ## Limitations
+
+Limitations constitute all functionality deemed un-necessary for the project. Should anybody wish incorporation of their delta in the main, albeit small, codebase please send a pull request and I should be pleased to consider it.
 
 1. Media types (accept header parameter) unverified - A _PUT_ resource is retrieved on _GET_. The accept parameter in the request is not verified against the resource media type when responding with the retained resource.
 2. Collection retrieval unsupported - A collection is a dynamically generated artefact containing all resources held at a location. Disregarding the accept request header parameter, the scripts, are unaware of what datatype artefact is preferred by the requestig client.
