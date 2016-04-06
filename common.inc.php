@@ -44,7 +44,7 @@
      *
      * The code shared by all request processing scripts.
      *
-     * Meant to be a script that promotes code re-use and prevents 
+     * A common repository that promotes code re-use and prevents 
      * duplication across request processing scripts.
      * 
      */
@@ -67,7 +67,7 @@
     
     /**
      * 
-     * The resource length
+     * The resource name length
      * 
      * var integer
      * 
