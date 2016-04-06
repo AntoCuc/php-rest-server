@@ -122,8 +122,8 @@
              *
              * If not, attempt to create it
              * 
-	         * Allow public visibility
-	         * Recursively (support nested collections)
+             * Allow public visibility
+             * Recursively (support nested collections)
              *
              */
             @mkdir(dirname(RESOURCE_PATH).'/', 0777, TRUE);
