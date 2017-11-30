@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
+    RewriteCond %{REQUEST_METHOD} !^(GET|PUT|POST|DELETE)
+    RewriteRule .* [F]
     RewriteCond %{REQUEST_METHOD} (GET)
     RewriteRule .* get.php
     RewriteCond %{REQUEST_METHOD} (PUT)
