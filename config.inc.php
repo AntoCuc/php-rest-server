@@ -115,8 +115,8 @@
      *
      * Example:
      *     application/json
-     *     text/html, application/xml;q=0.9, */*;q=0.8
-     *     text/html; q=1.0, text/*; q=0.8, */*; q=0.1
+     *     text/html, application/xml;q=0.9, *\/*;q=0.8
+     *     text/html; q=1.0, text/*; q=0.8, *\/*; q=0.1
      *
      */
     define('RESOURCE_ACCEPT', $_SERVER['HTTP_ACCEPT']);
